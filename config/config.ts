@@ -95,8 +95,9 @@ export default {
       Routes: ['src/pages/Authorized'],
       authority: ['admin', 'user'],
       routes: [
+        { path: '/', redirect: '/dashboard' },
         {
-          path: '/',
+          path: '/dashboard',
           name: 'welcome',
           icon: 'smile',
           component: './Welcome',
