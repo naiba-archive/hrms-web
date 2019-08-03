@@ -218,7 +218,7 @@ class Register extends Component<RegisterProps, RegisterState> {
     const { count, prefix, help, visible } = this.state;
     return (
       <div className={styles.main}>
-        <h3>注册</h3>
+        <h3>用户注册</h3>
         <Form onSubmit={this.handleSubmit}>
           <FormItem>
             {getFieldDecorator('mail', {
@@ -322,7 +322,7 @@ class Register extends Component<RegisterProps, RegisterState> {
               )}
             </InputGroup>
           </FormItem>
-          <FormItem>
+          {/* <FormItem>
             <Row gutter={8}>
               <Col span={16}>
                 {getFieldDecorator('captcha', {
@@ -345,7 +345,7 @@ class Register extends Component<RegisterProps, RegisterState> {
                 </Button>
               </Col>
             </Row>
-          </FormItem>
+          </FormItem> */}
           <FormItem>
             <Button
               size="large"

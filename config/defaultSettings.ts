@@ -54,7 +54,7 @@ export default {
   menu: {
     locale: true,
   },
-  title: 'Ant Design Pro',
+  title: '胶囊租房',
   pwa: false,
   iconfontUrl: '',
 } as DefaultSettings;

@@ -84,13 +84,26 @@ export default {
   routes: [
     {
       path: '/',
-      component: '../layouts/BlankLayout',
       Routes: ['src/pages/Authorized'],
       authority: ['admin', 'user'],
       routes: [
         {
           path: '/',
           redirect: '/dashboard/welcome',
+        },
+        {
+          path: '/user',
+          component: '../layouts/UserLayout',
+          routes: [
+            {
+              name: 'register',
+              path: '/user/register',
+              component: './user/register',
+            },
+            {
+              component: './404',
+            },
+          ],
         },
         {
           path: '/dashboard',
@@ -104,12 +117,10 @@ export default {
               icon: 'smile',
               component: './Welcome',
             },
+            {
+              component: './404',
+            },
           ],
-        },
-        {
-          name: 'register',
-          path: '/register',
-          component: './register',
         },
         {
           component: './404',
