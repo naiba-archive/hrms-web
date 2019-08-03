@@ -43,18 +43,18 @@ export interface DefaultSettings {
 }
 
 export default {
-  navTheme: 'dark',
+  navTheme: 'light',
   primaryColor: '#1890FF',
-  layout: 'sidemenu',
+  layout: 'topmenu',
   contentWidth: 'Fluid',
-  fixedHeader: false,
-  autoHideHeader: false,
+  fixedHeader: true,
+  autoHideHeader: true,
   fixSiderbar: false,
   colorWeak: false,
   menu: {
     locale: true,
   },
   title: '胶囊租房',
-  pwa: false,
+  pwa: true,
   iconfontUrl: '',
 } as DefaultSettings;
