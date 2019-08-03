@@ -221,18 +221,19 @@ class Register extends Component<RegisterProps, RegisterState> {
         <h3>用户注册</h3>
         <Form onSubmit={this.handleSubmit}>
           <FormItem>
-            {getFieldDecorator('mail', {
+            {getFieldDecorator('username', {
               rules: [
                 {
                   required: true,
-                  message: '请输入邮箱地址！',
+                  message: '请输入用户名！',
                 },
                 {
-                  type: 'email',
-                  message: '邮箱地址格式错误！',
+                  min: 2,
+                  max: 12,
+                  message: '长度在 2 到 12 位之间',
                 },
               ],
-            })(<Input size="large" placeholder="邮箱" />)}
+            })(<Input size="large" placeholder="用户名" />)}
           </FormItem>
           <FormItem help={help}>
             <Popover
