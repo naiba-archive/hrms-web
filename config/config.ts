@@ -85,7 +85,6 @@ export default {
     {
       path: '/',
       Routes: ['src/pages/Authorized'],
-      authority: ['admin', 'user'],
       routes: [
         {
           path: '/',
@@ -101,6 +100,11 @@ export default {
               component: './user/register',
             },
             {
+              name: 'login',
+              path: '/user/login',
+              component: './user/login',
+            },
+            {
               component: './404',
             },
           ],
@@ -108,12 +112,14 @@ export default {
         {
           path: '/dashboard',
           name: '管理面板',
+          authority: ['user'],
           icon: 'dashboard',
           component: '../layouts/BasicLayout',
           routes: [
             {
               path: '/dashboard/welcome',
               name: 'welcome',
+              authority: ['user'],
               icon: 'smile',
               component: './Welcome',
             },
