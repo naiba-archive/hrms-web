@@ -44,7 +44,7 @@ export class WrappedFetch {
   /**
    * @description ajax 方法
    */
-  public ajax(
+  public async ajax(
     { method, url, data, form, query, header, extra }: WrappedFetchParams,
     path?: string,
     basePath?: string,

@@ -36,7 +36,10 @@ const Model: ModelType = {
 
   effects: {
     *login({ payload }, { call, put }) {
-      const response = yield call(APIS.x.apiAuthLoginPost(payload).then(data => data));
+      const response = yield call(async () => {
+        const x = await APIS.x.apiAuthLoginPost(payload).then(res => res);
+        return x;
+      });
       console.log(response, 'login');
       yield put({
         type: 'changeLoginStatus',
