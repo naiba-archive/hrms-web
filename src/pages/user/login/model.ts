@@ -36,7 +36,7 @@ const Model: ModelType = {
 
   effects: {
     *login({ payload }, { call, put }) {
-      APIS.DefaultApi.apiAuthLoginPost(payload).then(data => {
+      APIS.x.apiAuthLoginPost(payload).then(data => {
         console.log(data, 'login');
       });
       const response = {};
