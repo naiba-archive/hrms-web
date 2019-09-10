@@ -17,7 +17,6 @@
     "experimentalDecorators": true,
     "strict": true,
     "paths": {
-      "@ajax": ["./src/utils/request.ts"],
       "@/*": ["./src/*"]
     }
   },

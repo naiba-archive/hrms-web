@@ -20,7 +20,7 @@ interface LoginState {
   autoLogin: boolean;
 }
 export interface FormDataType {
-  userName: string;
+  phone: string;
   password: string;
   mobile: string;
   captcha: string;
@@ -120,24 +120,24 @@ class Login extends Component<LoginProps, LoginState> {
             this.loginForm = form;
           }}
         >
-          <Tab key="account" tab="账户密码登录">
+          <Tab key="account" tab="手机号码登录">
             {status === 'error' &&
               loginType === 'account' &&
               !submitting &&
               this.renderMessage('账户或密码错误（admin/ant.design）')}
             <UserName
-              name="userName"
-              placeholder={`${'用户名'}: admin or user`}
+              name="phone"
+              placeholder={`${'手机号'}`}
               rules={[
                 {
                   required: true,
-                  message: '请输入用户名!',
+                  message: '请输入手机号!',
                 },
               ]}
             />
             <Password
               name="password"
-              placeholder={`${'密码'}: ant.design`}
+              placeholder={`${'密码'}`}
               rules={[
                 {
                   required: true,
@@ -146,11 +146,13 @@ class Login extends Component<LoginProps, LoginState> {
               ]}
               onPressEnter={e => {
                 e.preventDefault();
-                this.loginForm.validateFields(this.handleSubmit);
+                if (this.loginForm) {
+                  this.loginForm.validateFields(this.handleSubmit);
+                }
               }}
             />
           </Tab>
-          <Tab key="mobile" tab="手机号登录">
+          <Tab key="mobile" tab="其他登录">
             {status === 'error' &&
               loginType === 'mobile' &&
               !submitting &&

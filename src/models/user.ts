@@ -1,8 +1,6 @@
 import { Effect } from 'dva';
 import { Reducer } from 'redux';
 
-import { queryCurrent, query as queryUsers } from '@/services/user';
-
 export interface CurrentUser {
   avatar?: string;
   name?: string;
@@ -42,14 +40,14 @@ const UserModel: UserModelType = {
 
   effects: {
     *fetch(_, { call, put }) {
-      const response = yield call(queryUsers);
+      const response = yield call();
       yield put({
         type: 'save',
         payload: response,
       });
     },
     *fetchCurrent(_, { call, put }) {
-      const response = yield call(queryCurrent);
+      const response = yield call();
       yield put({
         type: 'saveCurrentUser',
         payload: response,

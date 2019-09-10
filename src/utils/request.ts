@@ -39,11 +39,12 @@ export interface WrappedFetchParams extends ExtraFetchParams {
   path?: any;
 }
 
+/* eslint class-methods-use-this: ["error", { "exceptMethods": ["ajax","check"] }] */
 export class WrappedFetch {
   /**
    * @description ajax 方法
    */
-  public static ajax(
+  public ajax(
     { method, url, data, form, query, header, extra }: WrappedFetchParams,
     path?: string,
     basePath?: string,
@@ -84,7 +85,7 @@ export class WrappedFetch {
   /**
    * @description 接口传参校验
    */
-  public static check<V>(value: V, name: string) {
+  public check<V>(value: V, name: string) {
     if (value === null || value === undefined) {
       const msg = `[ERROR PARAMS]: ${name} can't be null or undefined`;
       // 非生产环境，直接抛出错误

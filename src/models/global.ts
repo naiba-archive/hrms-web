@@ -3,7 +3,6 @@ import { Subscription } from 'dva';
 
 import { Effect } from './connect.d';
 import { NoticeIconData } from '@/components/NoticeIcon';
-import { queryNotices } from '@/services/user';
 
 export interface NoticeItem extends NoticeIconData {
   id: string;
@@ -42,7 +41,7 @@ const GlobalModel: GlobalModelType = {
 
   effects: {
     *fetchNotices(_, { call, put, select }) {
-      const data = yield call(queryNotices);
+      const data = yield call();
       yield put({
         type: 'saveNotices',
         payload: data,
